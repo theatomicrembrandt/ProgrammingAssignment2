@@ -6,7 +6,8 @@
 # This function build all the operator needed to retrieve or set the values of the
 # matrix or its inverse
 # usage:
-# 1) Build a matrix, i.e. X<-x<-matrix(c(2,5,3,7,6,4,9,2,3), nrow=3, ncol=3)
+# 1) Build a matrix, i.e. x<-matrix(c(2,5,3,7,6,4,9,2,3), nrow=3, ncol=3)
+# 2) X<-makeCacheMatrix(x)
 # 2) Verify that - for example - the getter works, i.e. X$get() will print the matrix content
 makeCacheMatrix <- function(x = matrix()) {
   # Initialize the matrix inverse
@@ -38,6 +39,10 @@ makeCacheMatrix <- function(x = matrix()) {
 # This function returns the inverse of the matrix (if it exists).
 # The first time it is invoked it stores the resulting inverse in a cache
 # to speed up calculations
+# 
+# Usage: 
+# 1) Build X as described earlier
+# 2) cacheSolve(X)
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
 
